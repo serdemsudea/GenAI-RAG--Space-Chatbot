@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GenAI-RAG--Space-Chatbot
 RAG Tabanlı Chatbot Projesi
 
@@ -76,11 +77,85 @@ Vektör Veritabanı: Embedding’ler ChromaDB koleksiyonunda saklanır.
 Sorgu: Kullanıcının sorusu embedding’e çevrilir ve en benzer 3 metin parçası bulunur.
 
 Yanıt Üretimi: Gemini 2.5 Flash modeli, bu bağlamı kullanarak doğal bir yanıt oluşturur.
+=======
+🌌 Uzay Bilgi Chatbotu
+
+Generative AI 101 Bootcamp kapsamında hazırlanmış Türkçe RAG (Retrieval-Augmented Generation) tabanlı uzay bilgi asistanı.
+
+📋 Proje Hakkında
+
+Bu proje, uzay ve astronomi konularında sorular sorabileceğiniz bir yapay zekâ destekli bilgi asistanıdır.
+Kullanıcı, “Güneş sistemi nasıl oluştu?”, “Işık yılı nedir?”, “Evrende en sıcak gezegen hangisidir?” gibi sorular sorarak anında yanıt alabilir.
+Chatbot, önceden işlenmiş uzay temalı bir metin koleksiyonundan (NASA, ESA, bilimsel makaleler, ansiklopedik bilgiler vb.) ilgili bölümleri vektör tabanlı arama ile bulur ve Gemini modeliyle doğal bir Türkçe yanıt üretir.
+
+🛠️ Kullanılan Teknolojiler
+
+LangChain / Haystack → RAG (Retrieval-Augmented Generation) pipeline framework
+
+Streamlit → Web arayüzü
+
+Sentence Transformers → Türkçe embedding modeli (örnek: paraphrase-multilingual-MiniLM-L12-v2)
+
+Google Gemini → Text generation modeli
+
+ChromaDB → Vektör veritabanı
+
+Hugging Face Datasets → Veri yönetimi ve uzay verileri
+
+🚀 Kurulum
+1. Gerekli Paketleri Yükleyin
+# Virtual environment oluşturun (opsiyonel ama önerilir)
+python3 -m venv spacebot-env
+source spacebot-env/bin/activate  # macOS/Linux
+# spacebot-env\Scripts\activate  # Windows
+
+# Paketleri yükleyin
+pip install -r requirements.txt
+
+2. API Anahtarlarını Ayarlayın
+
+Proje kök dizininde .env dosyası oluşturun ve içine aşağıdakileri yazın:
+
+GOOGLE_API_KEY=your_google_api_key_here
+
+
+🔑 Google API Key: Google AI Studio
+ üzerinden alabilirsiniz.
+
+3. Uygulamayı Çalıştırın
+streamlit run app.py
+
+
+Tarayıcınızda otomatik olarak açılacaktır (genellikle http://localhost:8501).
+
+📁 Proje Yapısı
+.
+├── app.py               # Ana uygulama dosyası
+├── requirements.txt     # Python bağımlılıkları
+├── .env                 # API anahtarı (git'e eklenmez)
+├── README.md            # Bu dosya
+└── data/                # Uzay bilgileri (metin tabanlı kaynaklar)
+
+💡 Nasıl Çalışır?
+
+Veri Yükleme: Uzay konulu kaynak metinler içeri aktarılır.
+
+Belge İşleme: Metinler küçük parçalara (chunk) bölünür.
+
+Embedding: Her parça, Türkçe destekli embedding modeliyle vektöre dönüştürülür.
+
+Vektör Veritabanı: Vektörler ChromaDB içinde saklanır.
+
+Sorgulama: Kullanıcının sorusu embedding’e çevrilir ve en ilgili parçalar bulunur.
+
+Yanıt Üretimi: Gemini modeli, ilgili belgeleri kullanarak açıklayıcı bir yanıt oluşturur.
+>>>>>>> 14af3931 (Initial commit - RAG Chatbot project)
 
 🪐 Örnek Sorular
 
 “Dünyanın yüzde kaçı sudur?”
 
+<<<<<<< HEAD
 “Kara delik nedir?”
 
 “Işık yılı ne anlama gelir?”
@@ -136,11 +211,62 @@ Sorun	Olası Çözüm
 ModuleNotFoundError	pip install -r requirements.txt çalıştırın
 Veritabanı kurulum hatası	İnternet bağlantınızı ve API anahtarınızı doğrulayın
 Streamlit çalışmıyor	streamlit run app.py komutunu doğru dizinde çalıştırın
+=======
+“Işık yılı ne anlama gelir?”
+
+“En büyük yıldız hangisidir?”
+
+“Kara delikler nasıl oluşur?”
+
+“Mars’ta yaşam mümkün mü?”
+
+⚠️ Önemli Notlar
+
+İlk çalıştırmada embedding oluşturma birkaç dakika sürebilir.
+
+.env dosyasını GitHub’a yüklemeyin.
+
+Veri dosyaları sadece lokal veya bulut ortamda bulunmalıdır.
+
+Streamlit cache sistemi sonraki başlatmalarda hız kazandırır.
+
+🔧 Modüler Yapı (Opsiyonel)
+
+Projeni daha modüler hale getirmek için aşağıdaki dosya yapısına ayırabilirsin:
+
+config.py              # Sabitler ve ayarlar
+data_processing.py     # Veri yükleme ve işleme
+vector_store.py        # Vektör veritabanı yönetimi
+rag_pipeline.py        # RAG pipeline oluşturma
+app.py                 # Streamlit arayüzü
+
+📚 Öğrenme & Geliştirme Önerileri
+
+“RAG pipeline”, “embedding modeli” ve “vector database” kavramlarını derinlemesine incele.
+
+LangChain ve Haystack dökümantasyonlarını karşılaştır.
+
+Kendi embedding modelini eğitmeyi dene (Hugging Face Trainer modülüyle).
+
+Uzay temalı metinleri GPT veya Gemini ile genişletip veri çeşitliliğini artır.
+
+🐛 Sorun Giderme
+Sorun	Çözüm
+ModuleNotFoundError	pip install -r requirements.txt
+API key invalid	.env dosyasını kontrol et
+Embedding işlemi çok yavaş	Daha küçük bir model veya GPU kullan
+Streamlit açılmıyor	streamlit run app.py komutunu doğru dizinde çalıştır
+>>>>>>> 14af3931 (Initial commit - RAG Chatbot project)
 📝 Lisans
 
 Bu proje eğitim amaçlıdır ve ticari kullanım için tasarlanmamıştır.
 
 🤝 Katkıda Bulunma
 
+<<<<<<< HEAD
 Öneri, hata bildirimi veya geliştirme talebiniz varsa GitHub üzerinden issue açabilirsiniz.
 Yıldız 🌟 bırakmayı unutmayın!
+=======
+Öneri, hata raporu veya geliştirme isteği için GitHub üzerinden issue açabilirsiniz.
+Yıldız 🌟 bırakmayı unutmayın!
+>>>>>>> 14af3931 (Initial commit - RAG Chatbot project)
