@@ -1,6 +1,7 @@
 # GenAI-RAG--Space-Chatbot
 RAG Tabanlı Chatbot Projesi
-🌌 🤖 Akbank GenAI Giriş Bootcamp RAG Chatbot
+
+🌌 🤖 Akbank GenAI Giriş Bootcamp RAG Space Chatbot
 
 Bu proje, Generative AI Giriş Bootcamp kapsamında geliştirilmiş Türkçe bir RAG (Retrieval-Augmented Generation) tabanlı bilgi asistanıdır.
 Chatbot, verilen bir metin dosyasındaki (TXT) bilgileri kullanarak, kullanıcı sorularına Gemini 2.5 Flash modeliyle yanıt verir.
