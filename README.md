@@ -36,7 +36,7 @@ Python (typing, os)	(Uygulama mantığı ve sistem yönetimi)
 1. Sanal Ortam Oluşturun (Opsiyonel ama önerilir)
 python3 -m venv venv
 source venv/bin/activate  # macOS/Linux
-# venv\Scripts\activate   # Windows
+venv\Scripts\activate   # Windows
 
 2. Gerekli Paketleri Yükleyin
 pip install -r requirements.txt
